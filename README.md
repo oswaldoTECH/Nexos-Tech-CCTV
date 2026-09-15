@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexos Tech & CCTV | Soluciones Tecnológicas y Seguridad</title>
+    <title>Nexos Tech & CCTV - Soluciones Tecnológicas</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -21,6 +21,8 @@
             --primary: #0a192f;
             --secondary: #00d2ff;
             --accent: #0072ff;
+            --light: #f4f7f6;
+            --dark: #121212;
             --card-bg: #112240;
             --text-light: #e6f1ff;
             --text-dim: #8892b0;
@@ -62,6 +64,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             border-bottom: 1px solid rgba(0, 210, 255, 0.1);
             transition: all 0.3s ease;
         }
@@ -130,6 +133,8 @@
             padding: 120px 8% 60px;
             position: relative;
             z-index: 1;
+            background: linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(10,25,47,0.95) 100%), 
+                        radial-gradient(circle at center, #0072ff15 0%, transparent 70%);
         }
 
         .badge {
@@ -148,6 +153,7 @@
             font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 20px;
+            color: #fff;
             animation: fadeInUp 1s ease;
         }
 
@@ -204,6 +210,27 @@
             transform: translateY(-4px);
         }
 
+        /* --- STATS COUNTER SECTION --- */
+        .stats {
+            padding: 60px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            background: var(--primary);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
         /* --- SERVICES SECTION --- */
         .services {
             padding: 100px 8%;
@@ -220,6 +247,7 @@
         .section-header h2 {
             font-size: 2.3rem;
             margin-bottom: 10px;
+            color: #fff;
         }
 
         .section-header p {
@@ -237,6 +265,7 @@
             padding: 35px 25px;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
@@ -273,7 +302,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin: 0 auto 25px;
             font-size: 1.8rem;
             color: var(--secondary);
             transition: all 0.3s;
@@ -288,32 +317,12 @@
         .card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
+            color: #e6f1ff;
         }
 
         .card p {
             color: var(--text-dim);
             font-size: 0.92rem;
-        }
-
-        /* --- STATS COUNTER SECTION --- */
-        .stats {
-            padding: 60px 8%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-            background: var(--primary);
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            font-weight: 800;
-        }
-
-        .stat-item p {
-            color: var(--text-dim);
-            font-size: 0.9rem;
         }
 
         /* --- CONTACT SECTION --- */
@@ -338,6 +347,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            font-size: 1.1rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
             text-decoration: none;
@@ -438,7 +448,7 @@
     <header>
         <a href="#" class="logo">
             <i class="fa-solid fa-shield-halved"></i>
-            Nexos <span>Tech & CCTV</span>
+            Nexos <span>Tech</span>
         </a>
         <nav>
             <ul>
@@ -529,7 +539,7 @@
             <a href="https://wa.me/593987654321" target="_blank" class="contact-card">
                 <i class="fa-solid fa-phone"></i>
                 <div>
-                    <strong> WhatsApp / Teléfono</strong>
+                    <strong>WhatsApp / Teléfono</strong>
                     <p style="font-size: 0.8rem; color: var(--text-dim);">+593 98 765 4321</p>
                 </div>
             </a>
