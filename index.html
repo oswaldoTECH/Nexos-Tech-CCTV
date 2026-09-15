@@ -3,957 +3,3078 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexos Tech & CCTV | Soluciones Tecnológicas & Seguridad</title>
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Nexos Tech & CCTV | Seguridad, Redes y Automatización</title>
 
-    <!-- Google Fonts -->
+    <meta name="description"
+          content="Nexos Tech & CCTV - Instalación de cámaras, cercos eléctricos, automatización de puertas, redes, Wi-Fi, VPN, soporte informático e impresoras.">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
-    <style>
-        :root {
-            --bg-main: #050a14;
-            --bg-card: rgba(15, 28, 50, 0.6);
-            --bg-card-hover: rgba(21, 38, 66, 0.85);
-            --primary-cyan: #00f0ff;
-            --secondary-blue: #0066ff;
-            --accent-glow: rgba(0, 240, 255, 0.25);
-            --text-main: #f0f6fc;
-            --text-muted: #94a3b8;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-highlight: rgba(0, 240, 255, 0.4);
-            --radius-lg: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(0, 102, 255, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 60%, rgba(0, 240, 255, 0.08) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 7%;
-            background: rgba(5, 10, 20, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: 12px 7%;
-            background: rgba(5, 10, 20, 0.95);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-cyan));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.1rem;
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        .logo span {
-            color: var(--primary-cyan);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-            padding: 4px 0;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--primary-cyan);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-cyan);
-            transition: var(--transition);
-            box-shadow: 0 0 8px var(--primary-cyan);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 140px 7% 80px;
-            gap: 50px;
-            position: relative;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 240, 255, 0.08);
-            color: var(--primary-cyan);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--border-highlight);
-            margin-bottom: 24px;
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
-        }
-
-        .badge i {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #fff 30%, var(--primary-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-blue), #0044cc);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(0, 102, 255, 0.6);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-main);
-            border: 1px solid var(--border-subtle);
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary-cyan);
-            color: var(--primary-cyan);
-        }
-
-        /* HERO IMAGE CONTAINER WITH GLOW */
-        .hero-img-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-img-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            background: radial-gradient(circle, var(--secondary-blue) 0%, var(--primary-cyan) 100%);
-            filter: blur(80px);
-            opacity: 0.25;
-            z-index: 0;
-        }
-
-        .hero-img-container {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 520px;
-            height: 380px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-highlight);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            transition: var(--transition);
-        }
-
-        .hero-img-container:hover {
-            transform: scale(1.02);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 20px 50px rgba(0, 240, 255, 0.2);
-        }
-
-        .hero-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* STATS BAR */
-        .stats {
-            padding: 35px 7%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-            background: rgba(15, 28, 50, 0.4);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 10px;
-        }
-
-        .stat-item h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
-            color: var(--primary-cyan);
-            font-weight: 700;
-        }
-
-        .stat-item p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            padding: 100px 7%;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.4rem;
-            margin-bottom: 14px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-subtle);
-            overflow: hidden;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-highlight);
-            background-color: var(--bg-card-hover);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-        }
-
-        .card-img-wrapper {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.08);
-        }
-
-        .icon-badge {
-            position: absolute;
-            bottom: 14px;
-            right: 14px;
-            width: 44px;
-            height: 44px;
-            background: rgba(5, 10, 20, 0.85);
-            border: 1px solid var(--border-highlight);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-cyan);
-            font-size: 1.1rem;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .card-content {
-            padding: 24px;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
-        }
-
-        /* INTERACTIVE BUDGET CALCULATOR / SELECTOR */
-        .calculator-section {
-            padding: 80px 7%;
-            background: linear-gradient(180deg, transparent, rgba(15, 28, 50, 0.4), transparent);
-        }
-
-        .calc-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-highlight);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .service-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin: 30px 0;
-        }
-
-        .option-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-subtle);
-            padding: 16px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            user-select: none;
-        }
-
-        .option-card:hover {
-            border-color: var(--primary-cyan);
-            background: rgba(0, 240, 255, 0.05);
-        }
-
-        .option-card.selected {
-            border-color: var(--primary-cyan);
-            background: rgba(0, 240, 255, 0.12);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-        }
-
-        .option-card i {
-            font-size: 1.2rem;
-            color: var(--primary-cyan);
-        }
-
-        .calc-action {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        /* FAQ SECTION */
-        .faq-section {
-            padding: 80px 7%;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            border-top: 1px solid transparent;
-        }
-
-        .faq-item.active {
-            border-color: var(--border-highlight);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding: 0 20px 20px 20px;
-            border-color: var(--border-subtle);
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-            color: var(--primary-cyan);
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            padding: 90px 7%;
-            background: rgba(15, 28, 50, 0.3);
-            text-align: center;
-        }
-
-        .contact-cards {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            padding: 22px 30px;
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border: 1px solid var(--border-subtle);
-            text-decoration: none;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-
-        .contact-card:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .contact-card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(0, 240, 255, 0.1);
-            color: var(--primary-cyan);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        /* FLOATING WHATSAPP BUTTON */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 58px;
-            height: 58px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 25px 7%;
-            background-color: #03060d;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding-top: 130px;
-            }
-
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-
-            .btn-group {
-                justify-content: center;
-            }
-
-            nav ul {
-                display: none; /* Se puede implementar un menú hamburguesa dinámico */
-            }
-        }
-    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --bg-main: #030914;
+    --bg-secondary: #071426;
+    --bg-card: rgba(11, 27, 48, 0.72);
+
+    --cyan: #00eaff;
+    --blue: #087cff;
+    --blue-dark: #0054d6;
+
+    --text: #f5f9ff;
+    --muted: #8fa4bd;
+
+    --border: rgba(255,255,255,.09);
+    --border-cyan: rgba(0,234,255,.35);
+
+    --glow:
+        0 0 25px rgba(0,234,255,.15),
+        0 0 60px rgba(0,102,255,.08);
+
+    --radius: 18px;
+
+    --transition:
+        all .35s cubic-bezier(.4,0,.2,1);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+
+    background: var(--bg-main);
+
+    color: var(--text);
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    background-image:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(0,110,255,.14),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 45%,
+            rgba(0,234,255,.10),
+            transparent 35%
+        );
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND
+========================================================= */
+
+.tech-grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    pointer-events: none;
+
+    opacity: .35;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* =========================================================
+   MOVING LIGHTS
+========================================================= */
+
+.light {
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+    opacity: .12;
+
+    z-index: -2;
+}
+
+.light.one {
+
+    background: #0066ff;
+
+    top: -250px;
+    left: -200px;
+
+    animation: floatLight 12s ease-in-out infinite;
+}
+
+.light.two {
+
+    background: #00eaff;
+
+    right: -250px;
+    top: 40%;
+
+    animation: floatLight 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatLight {
+
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(80px,60px);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 7%;
+
+    background: rgba(3,9,20,.60);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+header.scrolled {
+
+    padding: 11px 7%;
+
+    background: rgba(3,9,20,.92);
+
+    border-bottom-color: var(--border);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    font-family: 'Space Grotesk';
+
+    font-size: 1.45rem;
+
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.logo-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.25);
+
+    transition: var(--transition);
+}
+
+.logo:hover .logo-icon {
+
+    transform: rotate(-8deg) scale(1.08);
+
+}
+
+
+/* NAV */
+
+nav ul {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+}
+
+nav a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--muted);
+
+    font-size: .92rem;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+
+    color: var(--cyan);
+}
+
+nav a::after {
+
+    content: '';
+
+    position: absolute;
+
+    bottom: -8px;
+
+    left: 50%;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--cyan);
+
+    transform: translateX(-50%);
+
+    box-shadow: 0 0 10px var(--cyan);
+
+    transition: var(--transition);
+}
+
+nav a:hover::after,
+nav a.active::after {
+
+    width: 100%;
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn {
+
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr .95fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 145px 7% 90px;
+
+    position: relative;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 17px;
+
+    margin-bottom: 25px;
+
+    border-radius: 50px;
+
+    color: var(--cyan);
+
+    background: rgba(0,234,255,.07);
+
+    border: 1px solid var(--border-cyan);
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    box-shadow: var(--glow);
+}
+
+.badge i {
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(1.2);
+    }
+}
+
+
+.hero h1 {
+
+    font-family: 'Space Grotesk';
+
+    font-size: clamp(
+        2.7rem,
+        5vw,
+        4.5rem
+    );
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            #1685ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+}
+
+.hero p {
+
+    max-width: 690px;
+
+    color: var(--muted);
+
+    font-size: 1.03rem;
+
+    margin-bottom: 35px;
+}
+
+.hero p strong {
+
+    color: #dceaff;
+}
+
+
+/* BUTTONS */
+
+.btn-group {
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    border-radius: 13px;
+
+    border: 1px solid transparent;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: .92rem;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            #00bfff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,120,255,.3);
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(0,180,255,.4);
+}
+
+.btn-secondary {
+
+    color: var(--cyan);
+
+    background: rgba(255,255,255,.035);
+
+    border-color: var(--border-cyan);
+}
+
+.btn-secondary:hover {
+
+    background: rgba(0,234,255,.08);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-img-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    perspective: 1000px;
+}
+
+.hero-img-wrapper::before {
+
+    content: '';
+
+    position: absolute;
+
+    width: 80%;
+    height: 80%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--cyan)
+        );
+
+    filter: blur(90px);
+
+    opacity: .20;
+}
+
+
+/* IMAGE */
+
+.hero-img-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 560px;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border: 1px solid var(--border-cyan);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.55),
+
+        0 0 50px rgba(0,120,255,.12);
+
+    transform: rotateY(-3deg);
+
+    transition: var(--transition);
+}
+
+.hero-img-container:hover {
+
+    transform:
+        rotateY(0deg)
+        translateY(-8px);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+
+        0 40px 80px rgba(0,0,0,.6),
+
+        0 0 50px rgba(0,234,255,.18);
+}
+
+.hero-img-container img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s ease;
+}
+
+.hero-img-container:hover img {
+
+    transform: scale(1.06);
+}
+
+
+/* IMAGE OVERLAY */
+
+.hero-img-container::after {
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(3,9,20,.7)
+        );
+
+    pointer-events: none;
+}
+
+
+/* FLOATING INFO */
+
+.floating-card {
+
+    position: absolute;
+
+    z-index: 5;
+
+    padding: 13px 17px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(5,15,28,.88);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid var(--border-cyan);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    font-size: .78rem;
+
+    font-weight: 700;
+}
+
+.floating-card i {
+
+    color: var(--cyan);
+
+    font-size: 1.1rem;
+}
+
+.card-one {
+
+    top: 30px;
+
+    right: -25px;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.card-two {
+
+    bottom: 30px;
+
+    left: -25px;
+
+    animation: floating 4s ease-in-out infinite 1s;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 1px;
+
+    margin: 0 7%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: var(--border);
+
+    box-shadow: var(--glow);
+}
+
+.stat-item {
+
+    text-align: center;
+
+    padding: 30px 15px;
+
+    background:
+        rgba(7,20,38,.75);
+
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+
+    background:
+        rgba(0,234,255,.05);
+
+    transform: translateY(-3px);
+}
+
+.stat-item h3 {
+
+    font-family: 'Space Grotesk';
+
+    font-size: 2rem;
+
+    color: var(--cyan);
+
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+
+    color: var(--muted);
+
+    font-size: .8rem;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+
+    position: relative;
+}
+
+.services {
+
+    padding: 120px 7%;
+}
+
+.section-header {
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.section-header h2 {
+
+    font-family: 'Space Grotesk';
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3rem
+    );
+
+    margin-bottom: 12px;
+
+    letter-spacing: -1px;
+}
+
+.section-header h2 span {
+
+    color: var(--cyan);
+}
+
+.section-header p {
+
+    color: var(--muted);
+
+    font-size: .95rem;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 24px;
+}
+
+.card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,31,53,.85),
+            rgba(7,18,33,.65)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+
+    transform: translateY(0);
+}
+
+.card::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    transition: .6s;
+}
+
+.card:hover::before {
+
+    left: 100%;
+}
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: var(--border-cyan);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.35),
+
+        0 0 30px rgba(0,234,255,.08);
+}
+
+
+/* IMAGE */
+
+.card-img-wrapper {
+
+    height: 210px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.card-img-wrapper img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.card:hover
+.card-img-wrapper img {
+
+    transform: scale(1.08);
+}
+
+.card-img-wrapper::after {
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(3,9,20,.75)
+        );
+}
+
+
+/* ICON */
+
+.icon-badge {
+
+    position: absolute;
+
+    right: 16px;
+
+    bottom: 16px;
+
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(3,9,20,.85);
+
+    border: 1px solid var(--border-cyan);
+
+    color: var(--cyan);
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.15);
+}
+
+
+/* CONTENT */
+
+.card-content {
+
+    padding: 25px;
+}
+
+.card h3 {
+
+    font-family: 'Space Grotesk';
+
+    font-size: 1.2rem;
+
+    margin-bottom: 9px;
+}
+
+.card p {
+
+    color: var(--muted);
+
+    font-size: .88rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COTIZADOR
+========================================================= */
+
+.calculator-section {
+
+    padding: 100px 7%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,100,255,.08),
+            transparent 60%
+        );
+}
+
+.calc-box {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11,31,55,.85),
+            rgba(5,15,28,.9)
+        );
+
+    border: 1px solid var(--border-cyan);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.4),
+
+        0 0 50px rgba(0,150,255,.07);
+}
+
+
+/* OPTIONS */
+
+.service-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 14px;
+
+    margin: 35px 0;
+}
+
+.option-card {
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.025);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.option-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: var(--border-cyan);
+
+    background:
+        rgba(0,234,255,.05);
+}
+
+.option-card.selected {
+
+    border-color: var(--cyan);
+
+    background:
+        rgba(0,234,255,.10);
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.08);
+}
+
+.option-card i {
+
+    color: var(--cyan);
+
+    font-size: 1.15rem;
+}
+
+.option-card span {
+
+    font-size: .85rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+
+    padding: 100px 7%;
+}
+
+.faq-container {
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.faq-item {
+
+    margin-bottom: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background:
+        rgba(10,25,45,.65);
+
+    transition: var(--transition);
+}
+
+.faq-item.active {
+
+    border-color: var(--border-cyan);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+}
+
+.faq-question {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 21px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: .92rem;
+}
+
+.faq-question i {
+
+    color: var(--cyan);
+
+    transition: var(--transition);
+}
+
+.faq-item.active
+.faq-question i {
+
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 21px;
+
+    color: var(--muted);
+
+    font-size: .88rem;
+
+    transition:
+        max-height .4s ease,
+        padding .4s ease;
+}
+
+.faq-item.active
+.faq-answer {
+
+    max-height: 250px;
+
+    padding:
+        0 21px 21px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    padding: 110px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(0,100,255,.08)
+        );
+}
+
+.contact-box {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 55px 30px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border-cyan);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,140,255,.10),
+            rgba(7,18,33,.75)
+        );
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.35);
+}
+
+.contact-box h2 {
+
+    font-family: 'Space Grotesk';
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3rem
+    );
+
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+
+    color: var(--muted);
+
+    max-width: 600px;
+
+    margin: auto auto 30px;
+}
+
+
+/* CONTACT CARDS */
+
+.contact-cards {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px 22px;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.03);
+
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--cyan);
+
+    background:
+        rgba(0,234,255,.06);
+}
+
+.contact-card-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(0,234,255,.08);
+
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-float {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #25d366;
+
+    color: white;
+
+    font-size: 30px;
+
+    text-decoration: none;
+
+    z-index: 999;
+
+    box-shadow:
+        0 5px 30px rgba(37,211,102,.45);
+
+    animation:
+        whatsappPulse 2.5s infinite;
+
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+
+    transform: scale(1.12);
+
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 15px rgba(37,211,102,0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 30px 7%;
+
+    text-align: center;
+
+    background: #02060d;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: .78rem;
+}
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+.scroll-top {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 100px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(7,20,38,.9);
+
+    border: 1px solid var(--border-cyan);
+
+    color: var(--cyan);
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: var(--transition);
+
+    z-index: 998;
+}
+
+.scroll-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.scroll-top:hover {
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+    .hero p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-group {
+
+        justify-content: center;
+    }
+
+    .hero-img-wrapper {
+
+        margin-top: 20px;
+    }
+
+    .grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .service-options {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:800px) {
+
+    nav {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px 7%;
+
+        background:
+            rgba(3,9,20,.97);
+
+        border-bottom: 1px solid var(--border);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: var(--transition);
+    }
+
+    nav.open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    nav ul {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .menu-btn {
+
+        display: block;
+    }
+
+    .stats {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .floating-card {
+
+        display: none;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    header {
+
+        padding:
+            15px 5%;
+    }
+
+    .hero {
+
+        padding:
+            125px 5% 70px;
+    }
+
+    .hero h1 {
+
+        font-size: 2.65rem;
+    }
+
+    .hero-img-container {
+
+        height: 330px;
+    }
+
+    .services,
+    .faq-section,
+    .calculator-section,
+    .contact {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .service-options {
+
+        grid-template-columns: 1fr;
+    }
+
+    .calc-box {
+
+        padding: 28px 20px;
+    }
+
+    .stats {
+
+        margin:
+            0 5%;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .stat-item h3 {
+
+        font-size: 1.55rem;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .btn-group {
+
+        width: 100%;
+    }
+
+    .contact-card {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .whatsapp-float {
+
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
-    <header id="navbar">
-        <a href="#inicio" class="logo">
-            <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            Nexos <span>Tech</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#inicio" class="active">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#cotizador">Cotizador Express</a></li>
-                <li><a href="#faq">Preguntas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-            <div class="badge">
-                <i class="fa-solid fa-bolt"></i> Soluciones Integrales Tecnológicas
-            </div>
-            <h1>Seguridad, Redes & <span>Automatización</span></h1>
-            <p>En <strong>Nexos Tech & CCTV</strong> impulsamos la seguridad y la conectividad de tu hogar o empresa con tecnología de vanguardia en videovigilancia, motores, redes e informática.</p>
-            
-            <div class="btn-group">
-                <a href="https://wa.me/593984113081?text=Hola%20Tec.%20Oswaldo,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
-                </a>
-                <a href="#cotizador" class="btn btn-secondary">
-                    <i class="fa-solid fa-calculator"></i> Cotizador Express
-                </a>
-            </div>
+<!-- =====================================================
+     FONDO
+===================================================== -->
+
+<div class="tech-grid"></div>
+
+<div class="light one"></div>
+<div class="light two"></div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header id="navbar">
+
+    <a href="#inicio" class="logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
         </div>
 
-        <div class="hero-img-wrapper" data-aos="fade-left" data-aos-duration="1000">
-            <div class="hero-img-container">
-                <img src="instalacion de camaras.jpg" alt="Instalación de Cámaras de Seguridad">
-            </div>
-        </div>
-    </section>
+        Nexos <span>Tech</span>
 
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
-            <h3>100%</h3>
-            <p>Garantía Profesional</p>
-        </div>
-        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-            <h3>CCTV 4K</h3>
-            <p>Monitoreo Móvil Remoto</p>
-        </div>
-        <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-            <h3>Cero Fallas</h3>
-            <p>Seguridad Perimetral</p>
-        </div>
-        <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
-            <h3>Wi-Fi & VPN</h3>
-            <p>Conectividad de Alta Velocidad</p>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="servicios">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Nuestros Servicios Especializados</h2>
-            <p>Soluciones técnicas avanzadas diseñadas a la medida de tus necesidades</p>
-        </div>
-
-        <div class="grid">
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-img-wrapper">
-                    <img src="camaras ip.jpg" alt="Cámaras IP y Wi-Fi">
-                    <div class="icon-badge"><i class="fa-solid fa-video"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Videovigilancia (CCTV / IP)</h3>
-                    <p>Instalación y configuración de cámaras IP, PTZ, analógicas, Imou y Ezviz. Monitoreo en vivo directamente desde tu teléfono smartphone.</p>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-img-wrapper">
-                    <img src="cerco electrico.jpg" alt="Cercos Eléctricos">
-                    <div class="icon-badge"><i class="fa-solid fa-bolt"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Cercos Eléctricos Perimetrales</h3>
-                    <p>Protección perimetral de alto impacto para inmuebles. Sistemas electrificados integrados con sirenas de alarma y sensores anti-corte.</p>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-img-wrapper">
-                    <img src="motorpuerta.webp" alt="Motores para Puertas">
-                    <div class="icon-badge"><i class="fa-solid fa-door-open"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Automatización de Puertas</h3>
-                    <p>Motores para puertas corredizas, levadizas y batientes. Mantenimiento y configuración rápida de mandos a distancia/controles.</p>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-img-wrapper">
-                    <img src="vpns.jpg" alt="Redes y VPNs">
-                    <div class="icon-badge"><i class="fa-solid fa-network-wired"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Redes, Wi-Fi & VPNs Seguras</h3>
-                    <p>Cableado estructurado de red, enlaces inalámbricos, amplificación Wi-Fi de alta cobertura y redes interconectadas VPN para sucursales.</p>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-img-wrapper">
-                    <img src="disco duro de hdd a sd.jpg" alt="Soporte Técnico PC">
-                    <div class="icon-badge"><i class="fa-solid fa-laptop-code"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Soporte Técnico Informático</h3>
-                    <p>Mantenimiento preventivo/correctivo de PC, optimización de sistema, formateo e instalación de SSD para acelerar tu computadora al máximo.</p>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-img-wrapper">
-                    <img src="mantenimiento de impresora.jpg" alt="Mantenimiento de Impresoras">
-                    <div class="icon-badge"><i class="fa-solid fa-print"></i></div>
-                </div>
-                <div class="card-content">
-                    <h3>Mantenimiento de Impresoras</h3>
-                    <p>Limpieza profunda de cabezales, destape de inyectores, reparación de sistemas de tinta continua y calibración de impresión.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COTIZADOR EXPRESS DINÁMICO -->
-    <section class="calculator-section" id="cotizador" data-aos="fade-up">
-        <div class="calc-box">
-            <div class="section-header" style="margin-bottom: 20px;">
-                <h2>Cotizador Interactivo Express</h2>
-                <p>Selecciona los servicios que necesitas y envía tu consulta personalizada al instante:</p>
-            </div>
-
-            <div class="service-options">
-                <div class="option-card" onclick="toggleOption(this, 'Cámaras de Seguridad / CCTV')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Cámaras CCTV / IP</span>
-                </div>
-                <div class="option-card" onclick="toggleOption(this, 'Cerco Eléctrico')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Cerco Eléctrico</span>
-                </div>
-                <div class="option-card" onclick="toggleOption(this, 'Motor para Puerta')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Motor para Puerta</span>
-                </div>
-                <div class="option-card" onclick="toggleOption(this, 'Redes / Red Wi-Fi')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Redes y Wi-Fi</span>
-                </div>
-                <div class="option-card" onclick="toggleOption(this, 'Mantenimiento de PC / SSD')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Soporte Informático</span>
-                </div>
-                <div class="option-card" onclick="toggleOption(this, 'Mantenimiento Impresoras')">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Impresoras</span>
-                </div>
-            </div>
-
-            <div class="calc-action">
-                <button class="btn btn-primary" onclick="sendQuote()">
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar Presupuesto Personalizado
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq" data-aos="fade-up">
-        <div class="section-header">
-            <h2>Preguntas Frecuentes</h2>
-            <p>Resolvemos tus dudas de forma clara y directa</p>
-        </div>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    ¿Puedo ver mis cámaras de seguridad desde el celular?
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    ¡Sí, totalmente! Dejamos configurada una aplicación gratuita en tu celular o tablet para que monitorees en tiempo real y con alertas instantáneas desde cualquier parte.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    ¿Cuánto tiempo toma la instalación de un sistema de cámaras o cerco?
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    La mayoría de las instalaciones residenciales o de negocios pequeños se realizan en el mismo día o en un plazo de 24 a 48 horas según el requerimiento técnico.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    ¿Qué beneficio tengo al cambiar mi disco duro antiguo por un SSD?
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Un disco SSD hace que tu computadora funcione hasta 10 veces más rápida, encendiendo en segundos y abriendo programas al instante sin congelamientos.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contact" id="contacto" data-aos="fade-up">
-        <div class="section-header">
-            <h2>¿Tienes un proyecto en mente?</h2>
-            <p>Contacta directamente para una inspección técnica o cotización personalizada</p>
-        </div>
-
-        <div class="contact-cards">
-            <a href="tel:+593984113081" class="contact-card">
-                <div class="contact-card-icon"><i class="fa-solid fa-user-gear"></i></div>
-                <div style="text-align: left;">
-                    <strong>Tec. Oswaldo Quispe</strong><br>
-                    <small style="color:var(--text-muted)">Atención Técnica Especializada</small>
-                </div>
-            </a>
-
-            <a href="https://wa.me/593984113081" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <div style="text-align: left;">
-                    <strong>WhatsApp Directo</strong><br>
-                    <small style="color:var(--text-muted)">+593 98 411 3081</small>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/593984113081?text=Hola%20Tec.%20Oswaldo,%20necesito%20asistencia%20t%C3%A9cnica" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Nexos Tech & CCTV - Soluciones Integrales en Seguridad y Redes Tecnológicas.</p>
-    </footer>
 
-    <!-- AOS (Animate On Scroll) JS Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
-    <script>
-        // Inicializar Librería de Animación
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+    <nav id="navMenu">
 
-        // Efecto Navbar al hacer scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+        <ul>
 
-        // Lógica Cotizador Express
-        let selectedServices = [];
+            <li>
+                <a href="#inicio" class="active">
+                    Inicio
+                </a>
+            </li>
 
-        function toggleOption(element, serviceName) {
-            element.classList.toggle('selected');
-            if (selectedServices.includes(serviceName)) {
-                selectedServices = selectedServices.filter(item => item !== serviceName);
-            } else {
-                selectedServices.push(serviceName);
-            }
+            <li>
+                <a href="#servicios">
+                    Servicios
+                </a>
+            </li>
+
+            <li>
+                <a href="#cotizador">
+                    Cotizador
+                </a>
+            </li>
+
+            <li>
+                <a href="#faq">
+                    Preguntas
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto">
+                    Contacto
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menú">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+
+    <div
+        class="hero-content"
+        data-aos="fade-right"
+        data-aos-duration="1000">
+
+
+        <div class="badge">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            Soluciones Integrales Tecnológicas
+
+        </div>
+
+
+        <h1>
+
+            Seguridad, Redes &
+
+            <span>
+                Automatización
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            En <strong>Nexos Tech & CCTV</strong>
+            impulsamos la seguridad y conectividad
+            de tu hogar o empresa con soluciones
+            profesionales en videovigilancia,
+            automatización, redes e informática.
+
+        </p>
+
+
+        <div class="btn-group">
+
+            <a
+                href="https://wa.me/593984113081?text=Hola%20Tec.%20Oswaldo,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Cotizar por WhatsApp
+
+            </a>
+
+
+            <a
+                href="#servicios"
+                class="btn btn-secondary">
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+                Ver soluciones
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- IMAGEN -->
+
+    <div
+        class="hero-img-wrapper"
+        data-aos="fade-left"
+        data-aos-duration="1000">
+
+
+        <div class="hero-img-container">
+
+            <img
+                src="instalacion de camaras.jpg"
+                alt="Instalación profesional de cámaras de seguridad">
+
+        </div>
+
+
+        <!-- TARJETA SUPERIOR -->
+
+        <div class="floating-card card-one">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <div>
+
+                <strong>Seguridad 24/7</strong>
+
+                <br>
+
+                <small>
+                    Protección inteligente
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA INFERIOR -->
+
+        <div class="floating-card card-two">
+
+            <i class="fa-solid fa-wifi"></i>
+
+            <div>
+
+                <strong>Redes & Wi-Fi</strong>
+
+                <br>
+
+                <small>
+                    Conectividad estable
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat-item"
+         data-aos="zoom-in">
+
+        <h3>24/7</h3>
+
+        <p>
+            Monitoreo y seguridad
+        </p>
+
+    </div>
+
+
+    <div class="stat-item"
+         data-aos="zoom-in"
+         data-aos-delay="100">
+
+        <h3>CCTV</h3>
+
+        <p>
+            Videovigilancia inteligente
+        </p>
+
+    </div>
+
+
+    <div class="stat-item"
+         data-aos="zoom-in"
+         data-aos-delay="200">
+
+        <h3>Wi-Fi</h3>
+
+        <p>
+            Redes de alta cobertura
+        </p>
+
+    </div>
+
+
+    <div class="stat-item"
+         data-aos="zoom-in"
+         data-aos-delay="300">
+
+        <h3>VPN</h3>
+
+        <p>
+            Conexiones seguras
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS
+===================================================== -->
+
+<section
+    class="services"
+    id="servicios">
+
+
+    <div
+        class="section-header"
+        data-aos="fade-up">
+
+        <h2>
+
+            Soluciones que
+
+            <span>
+                protegen y conectan
+            </span>
+
+        </h2>
+
+        <p>
+
+            Servicios técnicos especializados
+            para hogares, negocios y empresas.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="grid">
+
+
+        <!-- CCTV -->
+
+        <div
+            class="card"
+            data-aos="fade-up">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="camaras ip.jpg"
+                    alt="Cámaras IP y Wi-Fi">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-video"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Videovigilancia CCTV / IP
+                </h3>
+
+                <p>
+
+                    Instalación y configuración
+                    de cámaras IP, Wi-Fi, PTZ,
+                    analógicas, Imou y Ezviz.
+                    Monitoreo desde tu celular.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CERCO -->
+
+        <div
+            class="card"
+            data-aos="fade-up"
+            data-aos-delay="100">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="cerco electrico.jpg"
+                    alt="Cerco eléctrico">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Cercos Eléctricos
+                </h3>
+
+                <p>
+
+                    Protección perimetral,
+                    sistemas electrificados,
+                    sirenas y sensores
+                    para reforzar la seguridad.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PUERTAS -->
+
+        <div
+            class="card"
+            data-aos="fade-up"
+            data-aos-delay="200">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="motorpuerta.webp"
+                    alt="Automatización de puertas">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-door-open"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Automatización de Puertas
+                </h3>
+
+                <p>
+
+                    Motores para puertas
+                    corredizas, levadizas y
+                    batientes. Configuración
+                    de controles y mantenimiento.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REDES -->
+
+        <div
+            class="card"
+            data-aos="fade-up">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="vpns.jpg"
+                    alt="Redes Wi-Fi y VPN">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Redes, Wi-Fi & VPN
+                </h3>
+
+                <p>
+
+                    Cableado estructurado,
+                    redes inalámbricas,
+                    ampliación de cobertura,
+                    VPN y conectividad.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SOPORTE -->
+
+        <div
+            class="card"
+            data-aos="fade-up"
+            data-aos-delay="100">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="disco duro de hdd a sd.jpg"
+                    alt="Soporte técnico informático">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Soporte Informático
+                </h3>
+
+                <p>
+
+                    Mantenimiento de PC,
+                    optimización, formateo,
+                    instalación de SSD y
+                    solución de problemas.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- IMPRESORAS -->
+
+        <div
+            class="card"
+            data-aos="fade-up"
+            data-aos-delay="200">
+
+            <div class="card-img-wrapper">
+
+                <img
+                    src="mantenimiento de impresora.jpg"
+                    alt="Mantenimiento de impresoras">
+
+                <div class="icon-badge">
+
+                    <i class="fa-solid fa-print"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Mantenimiento de Impresoras
+                </h3>
+
+                <p>
+
+                    Limpieza profunda,
+                    destape de inyectores,
+                    sistemas de tinta continua
+                    y calibración.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COTIZADOR
+===================================================== -->
+
+<section
+    class="calculator-section"
+    id="cotizador">
+
+
+    <div class="calc-box"
+         data-aos="zoom-in">
+
+
+        <div class="section-header">
+
+            <h2>
+                Cotizador Express
+            </h2>
+
+            <p>
+
+                Selecciona lo que necesitas
+                y envíanos tu solicitud
+                directamente por WhatsApp.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-options">
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Cámaras de Seguridad / CCTV')">
+
+                <i class="fa-solid fa-video"></i>
+
+                <span>
+                    Cámaras CCTV / IP
+                </span>
+
+            </div>
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Cerco Eléctrico')">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <span>
+                    Cerco Eléctrico
+                </span>
+
+            </div>
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Motor para Puerta')">
+
+                <i class="fa-solid fa-door-open"></i>
+
+                <span>
+                    Motor para Puerta
+                </span>
+
+            </div>
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Redes / Wi-Fi')">
+
+                <i class="fa-solid fa-wifi"></i>
+
+                <span>
+                    Redes y Wi-Fi
+                </span>
+
+            </div>
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Soporte Informático')">
+
+                <i class="fa-solid fa-laptop"></i>
+
+                <span>
+                    Soporte Informático
+                </span>
+
+            </div>
+
+
+            <div
+                class="option-card"
+                onclick="toggleOption(this,'Mantenimiento de Impresoras')">
+
+                <i class="fa-solid fa-print"></i>
+
+                <span>
+                    Impresoras
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align:center;">
+
+            <button
+                class="btn btn-primary"
+                onclick="sendQuote()">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Solicitar cotización
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section
+    class="faq-section"
+    id="faq">
+
+
+    <div class="section-header"
+         data-aos="fade-up">
+
+        <h2>
+            Preguntas Frecuentes
+        </h2>
+
+        <p>
+            Información clara antes de contratar.
+        </p>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)">
+
+                ¿Puedo ver mis cámaras desde el celular?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="faq-answer">
+
+                Sí. Configuramos el sistema para
+                que puedas visualizar tus cámaras
+                desde tu celular o tablet y recibir
+                notificaciones según el sistema instalado.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)">
+
+                ¿Cuánto demora una instalación?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="faq-answer">
+
+                El tiempo depende de la cantidad
+                de equipos, cableado y dificultad
+                de la instalación. Después de revisar
+                el lugar podemos darte un tiempo estimado.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)">
+
+                ¿Pueden mejorar una red Wi-Fi existente?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="faq-answer">
+
+                Sí. Podemos revisar la cobertura,
+                distribución de equipos, canales,
+                cableado y configuración para mejorar
+                la estabilidad y cobertura de tu red.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="faq-item">
+
+            <div
+                class="faq-question"
+                onclick="toggleFaq(this)">
+
+                ¿También realizan mantenimiento?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="faq-answer">
+
+                Sí. Realizamos mantenimiento y
+                diagnóstico de sistemas CCTV,
+                redes, computadoras, impresoras,
+                automatización y otros equipos tecnológicos.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section
+    class="contact"
+    id="contacto">
+
+
+    <div
+        class="contact-box"
+        data-aos="zoom-in">
+
+
+        <h2>
+
+            ¿Tienes un proyecto
+            <span style="color:var(--cyan);">
+                en mente?
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Cuéntanos qué necesitas y
+            encontraremos una solución
+            adecuada para tu hogar o empresa.
+
+        </p>
+
+
+        <a
+            href="https://wa.me/593984113081?text=Hola%20Tec.%20Oswaldo,%20quisiera%20consultar%20sobre%20un%20servicio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Hablar por WhatsApp
+
+        </a>
+
+
+        <div class="contact-cards">
+
+
+            <a
+                href="tel:+593984113081"
+                class="contact-card">
+
+                <div class="contact-card-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+                <div style="text-align:left;">
+
+                    <strong>
+                        Tec. Oswaldo Quispe
+                    </strong>
+
+                    <br>
+
+                    <small style="color:var(--muted);">
+
+                        Atención Técnica
+
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="https://wa.me/593984113081"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card">
+
+                <div class="contact-card-icon">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </div>
+
+                <div style="text-align:left;">
+
+                    <strong>
+                        WhatsApp
+                    </strong>
+
+                    <br>
+
+                    <small style="color:var(--muted);">
+
+                        +593 98 411 3081
+
+                    </small>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 Nexos Tech & CCTV
+
+        ·
+
+        Seguridad, Redes y Automatización
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOTÓN WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/593984113081?text=Hola%20Tec.%20Oswaldo,%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- BOTÓN ARRIBA -->
+
+<div
+    class="scroll-top"
+    id="scrollTop">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</div>
+
+
+
+<!-- =====================================================
+     AOS
+===================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+<script>
+
+/* =====================================================
+   AOS
+===================================================== */
+
+AOS.init({
+
+    duration: 850,
+
+    once: true,
+
+    offset: 80
+
+});
+
+
+/* =====================================================
+   NAVBAR SCROLL
+===================================================== */
+
+const navbar =
+    document.getElementById('navbar');
+
+const scrollTop =
+    document.getElementById('scrollTop');
+
+
+window.addEventListener('scroll', () => {
+
+    if(window.scrollY > 50) {
+
+        navbar.classList.add('scrolled');
+
+    } else {
+
+        navbar.classList.remove('scrolled');
+
+    }
+
+
+    if(window.scrollY > 500) {
+
+        scrollTop.classList.add('show');
+
+    } else {
+
+        scrollTop.classList.remove('show');
+
+    }
+
+});
+
+
+/* =====================================================
+   SCROLL TOP
+===================================================== */
+
+scrollTop.addEventListener('click', () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: 'smooth'
+
+    });
+
+});
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuBtn =
+    document.getElementById('menuBtn');
+
+const navMenu =
+    document.getElementById('navMenu');
+
+
+menuBtn.addEventListener('click', () => {
+
+    navMenu.classList.toggle('open');
+
+    const icon =
+        menuBtn.querySelector('i');
+
+    if(navMenu.classList.contains('open')) {
+
+        icon.className =
+            'fa-solid fa-xmark';
+
+    } else {
+
+        icon.className =
+            'fa-solid fa-bars';
+
+    }
+
+});
+
+
+/* CERRAR MENU */
+
+document.querySelectorAll('nav a')
+.forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        navMenu.classList.remove('open');
+
+        menuBtn.querySelector('i').className =
+            'fa-solid fa-bars';
+
+    });
+
+});
+
+
+/* =====================================================
+   NAV ACTIVO
+===================================================== */
+
+const sections =
+    document.querySelectorAll('section[id]');
+
+const navLinks =
+    document.querySelectorAll('nav a');
+
+
+window.addEventListener('scroll', () => {
+
+    let current = '';
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop) {
+
+            current =
+                section.getAttribute('id');
+
         }
 
-        function sendQuote() {
-            if (selectedServices.length === 0) {
-                alert('Por favor, selecciona al menos un servicio para cotizar.');
-                return;
-            }
-            const message = `Hola Tec. Oswaldo, me interesa solicitar una cotización para los siguientes servicios:\n- ${selectedServices.join('\n- ')}`;
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/593984113081?text=${encodedMessage}`, '_blank');
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove('active');
+
+        if(
+            link.getAttribute('href')
+            === '#' + current
+        ) {
+
+            link.classList.add('active');
+
         }
 
-        // Lógica Preguntas Frecuentes (FAQ)
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            item.classList.toggle('active');
+    });
+
+});
+
+
+/* =====================================================
+   COTIZADOR
+===================================================== */
+
+let selectedServices = [];
+
+
+function toggleOption(element, serviceName) {
+
+    element.classList.toggle('selected');
+
+
+    if(
+        selectedServices.includes(serviceName)
+    ) {
+
+        selectedServices =
+            selectedServices.filter(
+                item => item !== serviceName
+            );
+
+    } else {
+
+        selectedServices.push(serviceName);
+
+    }
+
+}
+
+
+function sendQuote() {
+
+    if(selectedServices.length === 0) {
+
+        alert(
+            'Selecciona al menos un servicio para continuar.'
+        );
+
+        return;
+
+    }
+
+
+    const message =
+
+        `Hola Tec. Oswaldo, me interesa solicitar una cotización para:
+
+${selectedServices.map(
+    service => '• ' + service
+).join('\n')}
+
+Quisiera obtener más información.`;
+
+    const encoded =
+        encodeURIComponent(message);
+
+
+    window.open(
+
+        `https://wa.me/593984113081?text=${encoded}`,
+
+        '_blank'
+
+    );
+
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+function toggleFaq(element) {
+
+    const item =
+        element.parentElement;
+
+
+    document.querySelectorAll('.faq-item')
+    .forEach(faq => {
+
+        if(faq !== item) {
+
+            faq.classList.remove('active');
+
         }
-    </script>
+
+    });
+
+
+    item.classList.toggle('active');
+
+}
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+document.addEventListener(
+    'mousemove',
+    (e) => {
+
+        document.documentElement.style
+            .setProperty(
+                '--mouse-x',
+                e.clientX + 'px'
+            );
+
+        document.documentElement.style
+            .setProperty(
+                '--mouse-y',
+                e.clientY + 'px'
+            );
+
+    }
+);
+
+</script>
+
 
 </body>
 </html>
