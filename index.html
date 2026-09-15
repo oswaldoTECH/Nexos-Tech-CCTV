@@ -1,13 +1,20 @@
-
+```html
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Nexos Tech & CCTV - Soluciones Tecnológicas</title>
+
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -35,12 +42,19 @@
             overflow-x: hidden;
         }
 
-        /* --- BACKGROUND PARTICLES EFFECT --- */
+        /* =========================
+           BACKGROUND
+        ========================== */
+
         .bg-glow {
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(
+                circle,
+                rgba(0, 210, 255, 0.15) 0%,
+                rgba(0, 0, 0, 0) 70%
+            );
             border-radius: 50%;
             pointer-events: none;
             z-index: 0;
@@ -48,11 +62,19 @@
         }
 
         @keyframes floatGlow {
-            0% { transform: translate(-10%, -10%); }
-            100% { transform: translate(50vw, 50vh); }
+            0% {
+                transform: translate(-10%, -10%);
+            }
+
+            100% {
+                transform: translate(50vw, 50vh);
+            }
         }
 
-        /* --- HEADER & NAVBAR --- */
+        /* =========================
+           HEADER
+        ========================== */
+
         header {
             display: flex;
             justify-content: space-between;
@@ -60,11 +82,12 @@
             padding: 18px 8%;
             background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             border-bottom: 1px solid rgba(0, 210, 255, 0.1);
             transition: all 0.3s ease;
         }
@@ -122,7 +145,10 @@
             width: 100%;
         }
 
-        /* --- HERO SECTION --- */
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -133,8 +159,18 @@
             padding: 120px 8% 60px;
             position: relative;
             z-index: 1;
-            background: linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(10,25,47,0.95) 100%), 
-                        radial-gradient(circle at center, #0072ff15 0%, transparent 70%);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10, 25, 47, 0.9) 0%,
+                    rgba(10, 25, 47, 0.95) 100%
+                ),
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 114, 255, 0.08) 0%,
+                    transparent 70%
+                );
         }
 
         .badge {
@@ -158,8 +194,14 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(45deg, var(--secondary), #0072ff);
+            background: linear-gradient(
+                45deg,
+                var(--secondary),
+                var(--accent)
+            );
+
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -189,7 +231,12 @@
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            background: linear-gradient(
+                45deg,
+                var(--accent),
+                var(--secondary)
+            );
+
             color: #fff;
             box-shadow: 0 4px 20px rgba(0, 210, 255, 0.4);
         }
@@ -210,11 +257,18 @@
             transform: translateY(-4px);
         }
 
-        /* --- STATS COUNTER SECTION --- */
+        /* =========================
+           STATS
+        ========================== */
+
         .stats {
             padding: 60px 8%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+            );
+
             gap: 20px;
             text-align: center;
             background: var(--primary);
@@ -231,7 +285,10 @@
             font-size: 0.9rem;
         }
 
-        /* --- SERVICES SECTION --- */
+        /* =========================
+           SERVICES
+        ========================== */
+
         .services {
             padding: 100px 8%;
             position: relative;
@@ -256,7 +313,11 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+
             gap: 30px;
         }
 
@@ -264,9 +325,15 @@
             background-color: var(--card-bg);
             padding: 35px 25px;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(
+                0.175,
+                0.885,
+                0.32,
+                1.275
+            );
+
             position: relative;
             overflow: hidden;
         }
@@ -278,7 +345,13 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--secondary));
+
+            background: linear-gradient(
+                90deg,
+                var(--accent),
+                var(--secondary)
+            );
+
             transform: scaleX(0);
             transition: transform 0.4s ease;
             transform-origin: left;
@@ -325,7 +398,10 @@
             font-size: 0.92rem;
         }
 
-        /* --- CONTACT SECTION --- */
+        /* =========================
+           CONTACT
+        ========================== */
+
         .contact {
             padding: 100px 8%;
             text-align: center;
@@ -364,7 +440,10 @@
             color: var(--secondary);
         }
 
-        /* --- FLOATING WHATSAPP BUTTON --- */
+        /* =========================
+           WHATSAPP
+        ========================== */
+
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -389,26 +468,60 @@
             transform: scale(1.15);
         }
 
-        /* --- ANIMATIONS & KEYFRAMES --- */
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .reveal {
@@ -422,160 +535,445 @@
             transform: translateY(0);
         }
 
-        /* --- FOOTER --- */
+        /* =========================
+           FOOTER
+        ========================== */
+
         footer {
             text-align: center;
             padding: 25px;
             background-color: #07111e;
             color: var(--text-dim);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 2.2rem; }
-            .btn-group { flex-direction: column; width: 100%; }
-            .btn { width: 100%; justify-content: center; }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 150px 5% 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+
+            .services,
+            .contact {
+                padding: 70px 5%;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                right: 20px;
+                bottom: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="bg-glow"></div>
 
-    <!-- Header / Nav -->
+    <!-- =========================
+         HEADER / NAV
+    ========================== -->
+
     <header>
-        <a href="#" class="logo">
+
+        <a href="#inicio" class="logo">
             <i class="fa-solid fa-shield-halved"></i>
             Nexos <span>Tech</span>
         </a>
+
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#servicios">Servicios</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
             </ul>
         </nav>
+
     </header>
 
-    <!-- Hero Section -->
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero" id="inicio">
-        <div class="badge"><i class="fa-solid fa-bolt"></i> Soluciones Profesionales en Ecuador</div>
-        <h1>Tecnología, Redes y <span>Seguridad Electrónica</span></h1>
-        <p>En <strong>Nexos Tech & CCTV</strong> ofrecemos soluciones integrales en instalación de videovigilancia, redes de alta velocidad y soporte informático especializado. Mantén tu negocio u hogar seguro y conectado.</p>
-        <div class="btn-group">
-            <a href="https://wa.me/593987654321?text=Hola,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="btn btn-primary">
-                <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
-            </a>
-            <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+
+        <div class="badge">
+            <i class="fa-solid fa-bolt"></i>
+            Soluciones Profesionales en Ecuador
         </div>
+
+        <h1>
+            Tecnología, Redes y
+            <span>Seguridad Electrónica</span>
+        </h1>
+
+        <p>
+            En <strong>Nexos Tech & CCTV</strong> ofrecemos soluciones
+            integrales en instalación de videovigilancia, redes de alta
+            velocidad y soporte informático especializado.
+            Mantén tu negocio u hogar seguro y conectado.
+        </p>
+
+        <div class="btn-group">
+
+            <a
+                href="https://wa.me/593987654321?text=Hola%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+                Contactar por WhatsApp
+            </a>
+
+            <a
+                href="#servicios"
+                class="btn btn-secondary"
+            >
+                Ver Servicios
+            </a>
+
+        </div>
+
     </section>
 
-    <!-- Stats Section -->
+    <!-- =========================
+         STATS
+    ========================== -->
+
     <section class="stats reveal">
+
         <div class="stat-item">
             <h3>100%</h3>
             <p>Garantía de Calidad</p>
         </div>
+
         <div class="stat-item">
             <h3>CCTV</h3>
             <p>Monitoreo HD / 4K</p>
         </div>
+
         <div class="stat-item">
             <h3>Redes</h3>
             <p>Fibra & Wi-Fi Estable</p>
         </div>
+
         <div class="stat-item">
             <h3>24/7</h3>
             <p>Soporte Confiable</p>
         </div>
+
     </section>
 
-    <!-- Services Section -->
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
     <section class="services" id="servicios">
+
         <div class="section-header reveal">
-            <h2>Nuestros Servicios Especializados</h2>
-            <p>Tecnología avanzada adaptada a tus requerimientos</p>
+
+            <h2>
+                Nuestros Servicios Especializados
+            </h2>
+
+            <p>
+                Tecnología avanzada adaptada a tus requerimientos
+            </p>
+
         </div>
+
         <div class="grid">
+
+            <!-- CCTV -->
+
             <div class="card reveal">
-                <div class="icon-box"><i class="fa-solid fa-video"></i></div>
-                <h3>Sistemas CCTV</h3>
-                <p>Instalación, configuración y mantenimiento de cámaras IP y analógicas HD. Acceso y visualización remota desde tu smartphone.</p>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <h3>
+                    Sistemas CCTV
+                </h3>
+
+                <p>
+                    Instalación, configuración y mantenimiento de
+                    cámaras IP y analógicas HD. Acceso y visualización
+                    remota desde tu smartphone.
+                </p>
+
             </div>
+
+            <!-- NETWORKS -->
+
             <div class="card reveal">
-                <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
-                <h3>Redes y Conectividad</h3>
-                <p>Diseño de redes LAN/Wi-Fi, cableado estructurado, configuración de routers MikroTik, switches y optimización de velocidad.</p>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <h3>
+                    Redes y Conectividad
+                </h3>
+
+                <p>
+                    Diseño de redes LAN/Wi-Fi, cableado estructurado,
+                    configuración de routers MikroTik, switches y
+                    optimización de velocidad.
+                </p>
+
             </div>
+
+            <!-- COMPUTER SUPPORT -->
+
             <div class="card reveal">
-                <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Soporte Informático</h3>
-                <p>Mantenimiento preventivo y correctivo de PCs/laptops, limpieza de virus, actualización de componentes y sistemas operativos.</p>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <h3>
+                    Soporte Informático
+                </h3>
+
+                <p>
+                    Mantenimiento preventivo y correctivo de PCs y
+                    laptops, limpieza de virus, actualización de
+                    componentes y sistemas operativos.
+                </p>
+
             </div>
+
+            <!-- SERVERS -->
+
             <div class="card reveal">
-                <div class="icon-box"><i class="fa-solid fa-server"></i></div>
-                <h3>Infraestructura & Servidores</h3>
-                <p>Implementación de respaldos, configuración de subredes y soluciones informáticas integrales para negocios.</p>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <h3>
+                    Infraestructura & Servidores
+                </h3>
+
+                <p>
+                    Implementación de respaldos, configuración de
+                    subredes y soluciones informáticas integrales
+                    para negocios.
+                </p>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Contact Section -->
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
     <section class="contact" id="contacto">
+
         <div class="section-header reveal">
-            <h2>¿Listo para proteger y optimizar tu espacio?</h2>
-            <p>Atención directa por parte de especialistas</p>
+
+            <h2>
+                ¿Listo para proteger y optimizar tu espacio?
+            </h2>
+
+            <p>
+                Atención directa por parte de especialistas
+            </p>
+
         </div>
+
         <div class="contact-cards reveal">
-            <a href="tel:+593987654321" class="contact-card">
+
+            <!-- TECHNICIAN -->
+
+            <a
+                href="tel:+593987654321"
+                class="contact-card"
+            >
+
                 <i class="fa-solid fa-user-gear"></i>
+
                 <div>
-                    <strong>Tec. Oswaldo Quispe</strong>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">Especialista Técnico</p>
+
+                    <strong>
+                        Tec. Oswaldo Quispe
+                    </strong>
+
+                    <p
+                        style="
+                            font-size: 0.8rem;
+                            color: var(--text-dim);
+                        "
+                    >
+                        Especialista Técnico
+                    </p>
+
                 </div>
+
             </a>
-            <a href="https://wa.me/593987654321" target="_blank" class="contact-card">
+
+            <!-- PHONE -->
+
+            <a
+                href="https://wa.me/593987654321"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+            >
+
                 <i class="fa-solid fa-phone"></i>
+
                 <div>
-                    <strong>WhatsApp / Teléfono</strong>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">+593 98 765 4321</p>
+
+                    <strong>
+                        WhatsApp / Teléfono
+                    </strong>
+
+                    <p
+                        style="
+                            font-size: 0.8rem;
+                            color: var(--text-dim);
+                        "
+                    >
+                        +593 98 765 4321
+                    </p>
+
                 </div>
+
             </a>
+
         </div>
+
     </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/593987654321?text=Hola,%20necesito%20asistencia%20técnica" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+    <!-- =========================
+         FLOATING WHATSAPP
+    ========================== -->
+
+    <a
+        href="https://wa.me/593987654321?text=Hola%2C%20necesito%20asistencia%20t%C3%A9cnica"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Escríbenos por WhatsApp"
+        aria-label="Escríbenos por WhatsApp"
+    >
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
-        <p>&copy; 2026 Nexos Tech & CCTV - Soluciones Informáticas y Seguridad. Todos los derechos reservados.</p>
+
+        <p>
+            &copy; 2026 Nexos Tech & CCTV -
+            Soluciones Informáticas y Seguridad.
+            Todos los derechos reservados.
+        </p>
+
     </footer>
 
-    <!-- JavaScript for Animations -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script>
-        // Scroll Reveal Animation Functionality
-        window.addEventListener('scroll', reveal);
 
         function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
+            const reveals =
+                document.querySelectorAll('.reveal');
+
+            reveals.forEach(function (element) {
+
+                const windowHeight =
+                    window.innerHeight;
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                const elementVisible = 100;
+
+                if (
+                    elementTop <
+                    windowHeight - elementVisible
+                ) {
+
+                    element.classList.add('active');
+
                 }
-            }
+
+            });
+
         }
 
-        // Trigger reveal once on page load
-        reveal();
+        window.addEventListener(
+            'scroll',
+            reveal
+        );
+
+        window.addEventListener(
+            'load',
+            reveal
+        );
+
     </script>
+
 </body>
 </html>
+```
