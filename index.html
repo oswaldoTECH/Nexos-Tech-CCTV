@@ -80,7 +80,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* ESTILO DEL LOGOTIPO */
         .logo {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
@@ -93,17 +92,14 @@
             letter-spacing: -0.5px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-cyan));
+        /* ESTILO PARA LA IMAGEN DEL LOGOTIPO */
+        .logo-img {
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.1rem;
-            box-shadow: 0 0 15px var(--accent-glow);
+            object-fit: cover;
+            border: 1px solid var(--border-highlight);
+            box-shadow: 0 0 12px var(--accent-glow);
         }
 
         .logo span {
@@ -651,9 +647,9 @@
 
     <!-- HEADER -->
     <header id="navbar">
-        <!-- LOGO ESTILO MODERNO -->
+        <!-- LOGO CON TU IMAGEN DE GITHUB -->
         <a href="#inicio" class="logo">
-            <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <img src="ChatGPT Image 16 sept 2026, 08_30_11.png" alt="Logo Nexos Tech" class="logo-img">
             Nexos <span>Tech</span>
         </a>
         <nav>
