@@ -534,10 +534,11 @@
             z-index: 1;
 
             width: 100%;
-
-            max-width: 520px;
-
-            height: 380px;
+            
+            /* MODIFICADO: Dimensiones solicitadas */
+            max-width: 1981px;
+            aspect-ratio: 1981 / 794; 
+            height: auto;
 
             border-radius: 20px;
 
@@ -1260,10 +1261,10 @@
 
 
             .hero-img-container {
-
-                max-width: 600px;
-
-                height: 330px;
+                
+                /* MODIFICADO: Se adapta al 100% sin forzar altura */
+                max-width: 100%;
+                height: auto;
             }
         }
 
@@ -1289,11 +1290,10 @@
                 font-size: 0.95rem;
             }
 
-
-            .hero-img-container {
-
+            /* MODIFICADO: Se elimina la altura fija para que la imagen no se deforme */
+            /* .hero-img-container {
                 height: 280px;
-            }
+            } */
 
 
             .services,
